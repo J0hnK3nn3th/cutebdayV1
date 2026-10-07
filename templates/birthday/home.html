@@ -1,0 +1,81 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fbf4ed" />
+    <title>A little birthday magic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/birthday.css' %}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Birthday home">
+          <span class="brand-mark">✦</span>
+          <span>for someone special</span>
+        </a>
+        <span class="date-stamp">07 · 10 · 2026</span>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="birthday-title">
+          <div class="hero-copy">
+            <p class="eyebrow">a little note from the heart <span aria-hidden="true">♡</span></p>
+            <h1 id="birthday-title">Happy<br /><em>Birthday,</em><br /><span>beautiful human.</span></h1>
+            <p class="intro">Today is a gentle reminder that the world got brighter the day you arrived in it.</p>
+            <button class="primary-button" id="surpriseButton" type="button">
+              <span>open your surprise</span><span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="hero-art" aria-label="A birthday cake illustration with flowers" role="img">
+            <div class="art-sun"></div>
+            <div class="doodle doodle-star star-one">✦</div>
+            <div class="doodle doodle-star star-two">✦</div>
+            <div class="doodle doodle-heart">♡</div>
+            <div class="cake-wrap">
+              <div class="candle candle-one"><span></span></div>
+              <div class="candle candle-two"><span></span></div>
+              <div class="candle candle-three"><span></span></div>
+              <div class="flame flame-one"></div>
+              <div class="flame flame-two"></div>
+              <div class="flame flame-three"></div>
+              <div class="cake-top"></div>
+              <div class="cake-body"><span class="icing-drip drip-one"></span><span class="icing-drip drip-two"></span><span class="icing-drip drip-three"></span></div>
+              <div class="cake-plate"></div>
+            </div>
+            <div class="flower flower-pink"><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="flower flower-orange"><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="stem stem-left"></div><div class="stem stem-right"></div>
+            <div class="leaf leaf-left"></div><div class="leaf leaf-right"></div>
+          </div>
+        </section>
+
+        <section class="note-card" id="note" aria-live="polite">
+          <div class="note-ornament">✿</div>
+          <div>
+            <p class="card-label">a birthday wish for you</p>
+            <p class="card-message">May this next chapter bring you slow mornings, loud laughter, good surprises, and every kind of joy you deserve.</p>
+          </div>
+          <span class="card-sparkle">✦</span>
+        </section>
+
+        <section class="wish-section" aria-labelledby="wish-heading">
+          <div>
+            <p class="eyebrow">make a wish</p>
+            <h2 id="wish-heading">The best is<br /><em>still ahead.</em></h2>
+          </div>
+          <p class="wish-copy">Take a breath, close your eyes, and choose one tiny dream to carry with you into the year ahead.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer"><span>made with love &amp; a little bit of magic</span><span>♡</span></footer>
+    </div>
+    <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+    <script src="{% static 'js/birthday.js' %}"></script>
+  </body>
+</html>
