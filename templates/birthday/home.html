@@ -5,27 +5,63 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fbf4ed" />
-    <title>A little birthday magic</title>
+    <title>A little birthday magic!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{% static 'css/birthday.css' %}" />
   </head>
   <body>
-    <div class="page-shell">
+    <div class="game-gate" id="gameGate">
+      <div class="game-gate-topline"><span class="brand-mark">✦</span><span>for you, my love.</span><span>two tiny games · one big surprise</span></div>
+
+      <section class="game-stage active" id="welcomeStage" aria-labelledby="welcomeTitle">
+        <div class="welcome-sparkle sparkle-a">✦</div><div class="welcome-sparkle sparkle-b">♡</div>
+        <p class="gate-eyebrow">a little birthday adventure</p>
+        <h1 id="welcomeTitle">Before your<br /><em>birthday wish,</em></h1>
+        <p class="gate-intro">There are two tiny games waiting for you. Play along, and I’ll unlock a little something made just for you.</p>
+        <button class="game-button" id="beginGames" type="button"><span>let's play</span><span aria-hidden="true">→</span></button>
+        <div class="welcome-cake" aria-hidden="true"><span>✦</span><div class="mini-cake"><i></i><i></i><i></i><b></b></div></div>
+      </section>
+
+      <section class="game-stage" id="heartStage" aria-labelledby="heartTitle" hidden>
+        <div class="stage-heading"><span class="game-number">01 / 02</span><span class="stage-progress">hearts collected <b id="heartCount">0</b> / 5</span></div>
+        <p class="gate-eyebrow">game one · follow your heart</p>
+        <h2 id="heartTitle">Tap to catch the<br /><em>little hearts.</em></h2>
+        <p class="game-instruction">Tap five hearts before they float away. They’re shy, so keep your eyes open.</p>
+        <div class="heart-arena" id="heartArena" aria-label="Heart catching game"></div>
+      </section>
+
+      <section class="game-stage" id="candleStage" aria-labelledby="candleTitle" hidden>
+        <div class="stage-heading"><span class="game-number">02 / 02</span><span class="stage-progress">candles out <b id="candleCount">0</b> / 3</span></div>
+        <p class="gate-eyebrow">game two · make a wish</p>
+        <h2 id="candleTitle">Tap to blow out the <em> birthday candles.</em></h2>
+        <p class="game-instruction">Tap each flame to make your wish. Three little wishes, then your surprise is ready.</p>
+        <div class="candle-arena" id="candleArena" aria-label="Birthday candle game">
+          <button class="game-candle candle-game-one" type="button" aria-label="Blow out candle one"><span class="game-flame"></span><i></i></button>
+          <button class="game-candle candle-game-two" type="button" aria-label="Blow out candle two"><span class="game-flame"></span><i></i></button>
+          <button class="game-candle candle-game-three" type="button" aria-label="Blow out candle three"><span class="game-flame"></span><i></i></button>
+          <div class="game-plate"></div>
+        </div>
+      </section>
+
+      <p class="gate-footer" id="gateFooter">made with love, just for you <span>♡</span></p>
+    </div>
+
+    <div class="page-shell" id="birthdayPage" aria-hidden="true">
       <header class="site-header">
         <a class="brand" href="#top" aria-label="Birthday home">
           <span class="brand-mark">✦</span>
-          <span>for someone special</span>
+          <span>For You, My Love.</span>
         </a>
-        <span class="date-stamp">07 · 10 · 2026</span>
+        <span class="date-stamp">09 · 10 · 2026</span>
       </header>
 
       <main id="top">
         <section class="hero" aria-labelledby="birthday-title">
           <div class="hero-copy">
             <p class="eyebrow">a little note from the heart <span aria-hidden="true">♡</span></p>
-            <h1 id="birthday-title">Happy<br /><em>Birthday,</em><br /><span>beautiful human.</span></h1>
+            <h1 id="birthday-title">Happy<br /><em>Birthday,</em><br /><span>My Love,<br>Jenny Rose A. Cortado.</span></h1>
             <p class="intro">Today is a gentle reminder that the world got brighter the day you arrived in it.</p>
             <button class="primary-button" id="surpriseButton" type="button">
               <span>open your surprise</span><span aria-hidden="true">→</span>
@@ -51,7 +87,7 @@
             <div class="flower flower-pink"><i></i><i></i><i></i><i></i><b></b></div>
             <div class="flower flower-orange"><i></i><i></i><i></i><i></i><b></b></div>
             <div class="stem stem-left"></div><div class="stem stem-right"></div>
-            <div class="leaf leaf-left"></div><div class="leaf leaf-right"></div>
+            <div class="leaf leaf-left"></div><div class="leaf leaf-right"></div>http://127.0.0.1:8000/
           </div>
         </section>
 
